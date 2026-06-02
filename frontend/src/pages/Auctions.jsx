@@ -10,7 +10,7 @@ function Auctions() {
   const [selectedItem, setSelectedItem] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/items')
+    fetch(`${import.meta.env.VITE_API_URL}/api/items`)
       .then(res => res.json())
       .then(data => {
         setItems(data)
@@ -36,13 +36,13 @@ function Auctions() {
     }
     if (data.type === 'reset') {
       setSelectedItem(null)
-      fetch('http://localhost:8080/api/items')
+      fetch(`${import.meta.env.VITE_API_URL}/api/items`)
         .then(res => res.json())
         .then(fresh => setItems(fresh))
     }
   }
 
-  useWebSocket('ws://localhost:8080/ws', handleWsMessage)
+  useWebSocket(`${import.meta.env.VITE_WS_URL}/ws`, handleWsMessage)
 
   if (loading) return (
     <div className="flex items-center justify-center min-h-screen">
@@ -68,7 +68,7 @@ function Auctions() {
           <div key={item.id} className="lot-card" onClick={() => setSelectedItem({ item, index })}>
             <div className="lot-image-wrapper">
               <img
-                src={`http://localhost:8080${item.image}`}
+                src={`${import.meta.env.VITE_API_URL}${item.image}`}
                 alt={item.title}
                 className="lot-image"
               />

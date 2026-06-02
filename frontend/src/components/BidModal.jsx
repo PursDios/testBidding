@@ -32,7 +32,7 @@ function BidModal({ item, lotNumber, onClose, onBidPlaced }) {
     }
 
     setSubmitting(true)
-    fetch('http://localhost:8080/api/bids', {
+    fetch(`${import.meta.env.VITE_API_URL}/api/bids`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ itemId: item.id, amount: Math.round(amount * 100) }),
@@ -55,7 +55,7 @@ function BidModal({ item, lotNumber, onClose, onBidPlaced }) {
       <div className="modal-panel">
         <div className="modal-image-side">
           <img
-            src={`http://localhost:8080${liveItem.image}`}
+            src={`${import.meta.env.VITE_API_URL}${liveItem.image}`}
             alt={liveItem.title}
             className="modal-image"
           />

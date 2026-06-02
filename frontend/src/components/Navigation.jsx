@@ -15,7 +15,7 @@ function Navigation() {
         }
         setConfirm(false)
         setResetting(true)
-        fetch('http://localhost:8080/api/reset', { method: 'POST' })
+        fetch(`${import.meta.env.VITE_API_URL}/api/reset`, { method: 'POST' })
             .finally(() => setResetting(false))
     }
 

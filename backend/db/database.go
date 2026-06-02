@@ -22,7 +22,7 @@ var (
 
 func Connect() *sql.DB {
     once.Do(func() {
-        db, err := sql.Open("sqlite3", "./data/bidding.db")
+        db, err := sql.Open("sqlite3", "/data/bidding.db")
         if err != nil {
             panic(err)
         }
