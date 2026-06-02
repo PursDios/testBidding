@@ -2,7 +2,7 @@
 
 A real-time luxury car auction platform built as a CV/portfolio piece to learn React and Go. You can browse lots, place bids, and watch the prices update live across multiple browser tabs via WebSockets.
 
-**Live demo:** _coming soon_
+**Live demo:** https://pursdios.github.io/testBidding/
 
 ---
 
