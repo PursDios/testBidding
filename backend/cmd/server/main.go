@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/fs"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -41,7 +42,8 @@ func main() {
 		AllowedHeaders: []string{"Content-Type"},
 	}))
 
-	r.Handle("/images/*", http.StripPrefix("/images/", http.FileServer(http.Dir("./data/images"))))
+	imageFS, _ := fs.Sub(db.Images, "images")
+	r.Handle("/images/*", http.StripPrefix("/images/", http.FileServer(http.FS(imageFS))))
 	r.Get("/api/items", itemHandler.GetItems)
 	r.Post("/api/bids", bidHandler.PlaceBid)
 	r.Post("/api/reset", resetHandler.Reset)

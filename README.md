@@ -157,9 +157,9 @@ Search for `http://localhost:8080` and `ws://localhost:8080` and replace with yo
 
 **Backend** — the CORS allowed origins are in [backend/cmd/server/main.go](backend/cmd/server/main.go):
 ```go
-AllowedOrigins: []string{"http://localhost:5173"},
+AllowedOrigins: []string{"http://localhost:5173", "https://pursdios.github.io"},
 ```
-Add your deployed frontend URL here when deploying, otherwise the browser will block all API requests.
+Add your deployed frontend URL here if hosting elsewhere, otherwise the browser will block all API requests.
 
 ---
 

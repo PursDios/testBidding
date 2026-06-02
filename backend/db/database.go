@@ -15,6 +15,9 @@ import (
 //go:embed migrations/*.sql
 var migrations embed.FS
 
+//go:embed images/*
+var Images embed.FS
+
 var (
     instance *sql.DB
     once     sync.Once
