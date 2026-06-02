@@ -254,3 +254,9 @@ Go's WebSocket hub would push bid events to a Redis channel instead of broadcast
 **Where this project sits on that journey**
 
 This demo is essentially the Go bid service in isolation — no auth, no Laravel layer, SQLite instead of Postgres, no circuit breakers. But the architecture is deliberately shaped so those pieces could be added without rewriting everything. The handler → service → repository layering exists precisely so you can swap the SQLite repository for a Postgres one without touching the handlers. The WebSocket hub is already in its own package, ready to have Redis wired in behind it.
+
+---
+
+## Claude
+
+Claude (claude.ai) was used as an AI assistant during the development of this project. Specifically, it was used heavily for writing CSS — the design system, component styles, animations, and the overall dark/luxury aesthetic across all pages. The Go and React code was largely written by hand; Claude was mostly brought in when there was a layout or visual direction in mind but the CSS to get there needed working out quickly.
