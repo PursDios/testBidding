@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(f:\\Code\\bidding\\**)",
+      "Edit(f:\\Code\\bidding\\**)",
+      "Write(f:\\Code\\bidding\\**)"
+    ]
+  }
+}
